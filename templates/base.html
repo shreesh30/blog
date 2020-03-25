@@ -6,6 +6,11 @@
     <title>shreesh blog</title>
 </head>
 <body>
+    <div class="topnav">
+        <a href="{% url 'index'%}">Home</a>
+        
+        <a href="{% url 'about'%}">About</a>
+    </div>
     {%block content%}
     {%endblock%}
 </body>

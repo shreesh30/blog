@@ -2,9 +2,9 @@
 
 {%block content%}
 
-{%if post_details%}
-    
-        <h4>{{post_details.body}}</h4>
-    
-{%endif%}
+    {%for post in posts%}
+        <a href="{% url 'post' post.id%}">{{post.title}}</a>
+        <h4>{{post.created_on}}</h4>
+    {%endfor%}
+
 {%endblock%}

@@ -2,30 +2,66 @@
 {%load static%}
 {%block content%}
 <div id="heading">
-    <img src="{%static 'img/logo.png'%}" width="80" height="80" class="img-circle" id="index_logo" alt="Avatar" >Techno</div>
+    <img src="{%static 'img/logo.png'%}" width="80" height="80" class="img-fluid" id="index_logo" alt="Responsive image" >Techno</div>
     
     <!-- ALERTS -->
   {%include 'partials/_alerts.html' %}
 
-  <img src="{%static 'img/home.jpeg'%}" id="static_home_img" alt="">
+  <img src="{%static 'img/home.jpeg'%}" id="static_home_img" alt="Responsive image" class="img-fluid">
 
     <div class="welcome">
         Welcome to the Blog!
     </div>
 
     <div id="recent_post_heading">
-        <h3>Some of our most recent posts:</h3>
+        <h3>Recent Posts:</h3>
     </div>
           {%for recent_post in recent_posts%}
-                 <div class="recent_post">
+                 <!-- <div class="recent_post">
                      <h4>
                          <a href="{% url 'post' recent_post.id%}" style="color: rgba(43, 39, 39, 0.945);">{{recent_post.title}}</a>:
                         </h4>
+                    </div> -->
+
+                {%if recent_post.image%}
+                
+                    
+
+                <!-- <table>
+                    <tr>
+                      <td><a href="{% url 'post' recent_post.id%}"></a><img src="{{recent_post.image.url}}" alt=""   id="recent_img" ></a></td>
+                    </tr>
+                  </table> -->
+
+                  <!-- <div class='image-grid'>
+                    <div class='item' style=''>
+                        <a href="{% url 'post' recent_post.id%}"><img src="{{recent_post.image.url}}" alt=""   id="recent_img" ></a>
                     </div>
-                 {%if recent_post.image%}
-                    <a href="{% url 'post' recent_post.id%}"><img src="{{recent_post.image.url}}" alt="" class="img-fluid"  id="recent_img"></a>
+                    
+                  </div> -->
+
+                  
+                  <div class="card-group" style="padding-left: 20em; padding-right:20em;width:100%;height:auto">
+                    <div class="card" style="background: transparent;width:100%;height:auto">
+                        <a href="{% url 'post' recent_post.id%}"><img class="img-fluid" src="{{recent_post.image.url}}" alt="Responsive image" style="width: 70%;height:auto; margin-left:15%;margin-top:5%"></a>
+                      <div class="card-body" style="width:100%;height:auto">
+                        <h5 class="card-title"><a href="{% url 'post' recent_post.id%}" style="color: rgba(43, 39, 39, 0.945);margin-left:40%; font-size:150%">{{recent_post.title}}</a></h5>
+                        <p class="card-text">{{recent_post.body | slice:":400"}}
+                            <br>
+                            <a href="{% url 'post' recent_post.id%}" style="margin-left:35em;;width:100%;height:auto"">continue reading...</a>
+                        </p>
+                        <p class="card-text" style="margin-left: 37em;font-size:100%;width:100%;height:auto"><small class="text-muted">{{recent_post.last_modified}}</small></p>
+                      </div>
+                    </div>
+                    
+                  </div>
+                
                 {%endif%}
           {%endfor%}
+
+          
       
 
 {%endblock%}
+
+id=recent_img

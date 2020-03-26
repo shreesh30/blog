@@ -1,17 +1,32 @@
 {%extends 'base.html'%}
 
 {%block content%}
-<div class="blog_list">
+<!-- <div class="blog_list">
     {%for post in posts%}
     <div class="title">
         <h4><a href="{% url 'post' post.id%}" style="color: rgba(43, 39, 39, 0.945);">{{post.title}}</a></h4>
     </div>
         <h6 id='created_on'>Created On:{{post.created_on}}</h6>
-    {%endfor%}
+    {%endfor%} -->
 
 
-</div>
-    
+<!-- </div> -->
+
+{%for post in posts%}
+<div class="card w-75" style="width: 18rem;background:transparent; margin-left:10em;"  >
+    <div class="card-body" style="padding-left: 2em;">
+      <h5 class="card-title"><a href="{% url 'post' post.id%}" style="color: rgba(43, 39, 39, 0.945);font-family: 'Gotu', sans-serif;">{{post.title}}</a></h5>
+      <p class="card-text">{{post.body | slice:":100"}}....</p>
+      <a href="{% url 'post' post.id%}" style="color: beige; background-color:rgba(43, 39, 39, 0.945)" class="btn btn-primary">Read</a>
+      
+    </div>
+  </div>
+
+{%endfor%}
+
+
+
+
 
 
     <div class="text-xs-center"  >

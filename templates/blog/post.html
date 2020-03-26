@@ -3,24 +3,20 @@
 {%block content%}
 
 {%if post_details%}
-    <div class="main_title">
-        <h1 id="post_title">{{post_details.title}}</h1>
+<div class="card mb-3" style="background-color: transparent;margin-left:10%;margin-right:10%;margin-top:2%">
+    <h5 class="card-title" style="margin-left: 40%;font-size:250%;font-family: 'Gotu', sans-serif; color: rgba(43, 39, 39, 0.945);margin-top:2%">{{post_details.title}}</h5>
+    {%if post_details.image%}
+    <img src="{{post_details.image.url}}" class="img-fluid" alt="Responsive image" style="margin-left: 5%;margin-right:5%;margin-top:2%;margin-bottom:2%">
+    {%endif%}
+    <div class="card-body" >
+      <p class="card-text" style="margin-left:5%;margin-right:5%;font-family: 'Gotu', sans-serif; font-size:110%;color: rgba(43, 39, 39, 0.945);">{{post_details.body}}</p>
+      <p class="card-text" style="margin-left:70%;font-size:150%;color: rgba(43, 39, 39, 0.945);"><small class="text-muted">Last Updated:{{post_details.last_modified}}</small></p>
     </div>
-    <div>
-        {%if post_details.image%}
-        <img src="{{post_details.image.url}}" alt="" id="image_post" class="img-fluid">
-        {%endif%}
-    </div>
-    
-
-    <div class="post" >
-        <p id="post_body">{{post_details.body}}</p>
-        <br>
-        <h5 id="update">Last Updated:{{post_details.last_modified}}</h5>
-    </div>
-    
+  </div>
         
     
     
 {%endif%}
 {%endblock%}
+
+

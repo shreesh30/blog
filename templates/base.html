@@ -40,11 +40,13 @@
       }
 
       #image_post{
-        padding-right: 10%;
-        padding-left: 10%;
+        display: block;
+         margin-left: auto;
+        margin-right: auto;
         margin-bottom: 0.5%;
-        border-image: 20%;
+       
         border-radius: 20px;
+        width:136ex;
       }
       .main_title{
         font-family: 'Montserrat', sans-serif;
@@ -104,6 +106,7 @@
     
       #navigation_bar{
         position: relative;
+        
       }
 
       #main_post{
@@ -132,21 +135,25 @@
       }
 
       .recent_post{
-        margin-left: 12.5%;
+        
         color: rgba(43, 39, 39, 0.945);
         font-family: 'Gotu', sans-serif;
+        text-align: center;
       }
 
       #recent_post_heading{
-        margin-left: 12.5%;
+        
         color: rgba(43, 39, 39, 0.945);
         font-family: 'Gotu', sans-serif;
+        
+        text-align: center;
       }
 
       #recent_img{
-        margin-left: 12.5%;
-        width:20%;
+       
+        width:40ex;
         height: auto;
+       
       }
 
       #facebook{
@@ -169,10 +176,15 @@
         font-size: 2em;
         
       }
+
+
+      
+      
       
       </style>
 </head>
 <body>
+  
   <nav class="navbar navbar-expand-lg navbar-light " id="navigation_bar">
     <a class="navbar-brand" href="{%url 'index'%}">
       <img src="{%static 'img/logo.png'%}" width="50" height="50" class="img-circle" alt="Avatar">

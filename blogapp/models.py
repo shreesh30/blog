@@ -12,6 +12,7 @@ class Post(models.Model):
     body=models.TextField()
     created_on=models.DateField(auto_now_add=True,blank=True)
     last_modified=models.DateField(auto_now=True)
+    image=models.ImageField(upload_to='photos/%Y/%m',blank=True)
     categories = models.ManyToManyField('Category', related_name='posts')
     def __str__(self):
         return self.title

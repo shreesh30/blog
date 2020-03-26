@@ -3,12 +3,24 @@
 {%block content%}
 
 {%if post_details%}
-    <div class="title">
-        <h3 id="post_title">{{post_details.title}}</h3>
+    <div class="main_title">
+        <h1 id="post_title">{{post_details.title}}</h1>
     </div>
-    <p class="post">{{post_details.body}}</p>
+    <div>
+        {%if post_details.image%}
+        <img src="{{post_details.image.url}}" alt="" id="image_post" class="img-fluid">
+        {%endif%}
+    </div>
+    
+
+    <div class="post" >
+        <p id="post_body">{{post_details.body}}</p>
+        <br>
+        <h5 id="update">Last Updated:{{post_details.last_modified}}</h5>
+    </div>
+    
         
-    <h6 class="update">Last Updated:{{post_details.last_modified}}</h6>
+    
     
 {%endif%}
 {%endblock%}

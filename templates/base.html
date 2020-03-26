@@ -6,20 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{%static 'css/all.css'%}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Gotu&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Baloo+Da+2&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Gotu&display=swap" rel="stylesheet">
     <title>TECHNO</title>
     <style>
+
+      #created_on{
+        font-size: 90%;
+      }
+
       body {
-        background-image: url(/static/img/backgroundimg.jpg);
+        background-image: url(/static/img/background.jpg);
         background-repeat: no-repeat;
         background-attachment:fixed; 
         background-size: 100% 100%;
-      }
-
-      img{
-        border-radius: 100%;
       }
 
       center{
@@ -27,26 +28,101 @@
         font-weight: bolder;
       }
       .post{
-        font-family: 'Baloo Da 2', cursive;
+        
+        border: 1px solid #000;
+        margin-left: 10%;
+        margin-right: 10%;
       }
 
-      .title{
+      #image_post{
+        padding-right: 10%;
+        padding-left: 10%;
+        margin-bottom: 0.5%;
+        border-image: 20%;
+        border-radius: 20px;
+      }
+      .main_title{
         font-family: 'Gotu', sans-serif;
+        padding-top: 1%;
       }
 
-      .update{
-        margin-left: 80%;
+      #update{
+        text-align: right;
+        padding-right: 12%;
       }
 
       #post_title{
         text-align: center;
       }
+     
+      .pagination{
+        text-align: center;
+        padding-left: 45% ;
+        margin-top: 5%;
+      }
+      
+     
+      
+      .blog_list{
+        text-align: center;
+        
+      }
+
+      .title{
+        font-family: 'Gotu', sans-serif;
+        margin-top: 2%;
+      }
+
+      #heading
+      {
+        margin-top: 2%;
+        font-size:500%;
+        color: beige;
+        font-family: 'Gotu', sans-serif;
+        text-align: center;
+      }
+
+      #index_logo{
+        margin-bottom: 1%;
+      }
+
+      #foot{
+        position:relative;
+      }
+    
+      #navigation_bar{
+        position: relative;
+      }
+
+      #main_post{
+        border: black 2px solid;
+      }
+
+      #post_body{
+        font-family: 'Baloo Da 2', cursive;
+        padding-left: 7%;
+        padding-right: 7%;
+        padding-top: 3%;
+        font-size: 110%;
+
+      }
+
+      #static_home_img{
+        margin-left: 12.5%;
+      }
+
+      .welcome{
+        margin-top: 1%;
+        text-align: center;
+        color: beige;
+        font-family: 'Gotu', sans-serif;
+      }
       </style>
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="/">
-      <img src="{%static 'img/logo.jpg'%}" width="60" height="60" class="img-circle" alt="Avatar">
+  <nav class="navbar navbar-expand-lg navbar-light " id="navigation_bar">
+    <a class="navbar-brand" href="{%url 'index'%}">
+      <img src="{%static 'img/logo.png'%}" width="50" height="50" class="img-circle" alt="Avatar">
       Techno</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -258,6 +334,8 @@
 <!-- Footer -->
 </body>
 </html>
+
+
 
 
 

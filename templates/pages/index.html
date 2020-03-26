@@ -1,7 +1,22 @@
 {%extends 'base.html'%}
-
+{%load static%}
 {%block content%}
-    <center><h1>Home</h1></center>
+<div id="heading">
+    <img src="{%static 'img/logo.png'%}" width="70" height="70" class="img-circle" id="index_logo" alt="Avatar" >Techno</div>
+    
     <!-- ALERTS -->
   {%include 'partials/_alerts.html' %}
+
+  <img src="{%static 'img/home.jpeg'%}" id="static_home_img" alt="">
+
+    <div class="welcome">
+        <h1>Welcome to the Blog!</h1>
+    </div>
+
+    <div>
+        <h3>Some of our most recent posts:</h3>
+    </div>
+          
+      
+
 {%endblock%}

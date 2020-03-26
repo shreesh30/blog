@@ -4,7 +4,7 @@
 <div class="blog_list">
     {%for post in posts%}
     <div class="title">
-        <h4><a href="{% url 'post' post.id%}" style="color:beige;">{{post.title}}</a></h4>
+        <h4><a href="{% url 'post' post.id%}" style="color: rgba(43, 39, 39, 0.945);">{{post.title}}</a></h4>
     </div>
         <h6 id='created_on'>Created On:{{post.created_on}}</h6>
     {%endfor%}

@@ -2,7 +2,7 @@
 {%load static%}
 {%block content%}
 <div id="heading">
-    <img src="{%static 'img/logo.png'%}" width="70" height="70" class="img-circle" id="index_logo" alt="Avatar" >Techno</div>
+    <img src="{%static 'img/logo.png'%}" width="80" height="80" class="img-circle" id="index_logo" alt="Avatar" >Techno</div>
     
     <!-- ALERTS -->
   {%include 'partials/_alerts.html' %}
@@ -10,13 +10,22 @@
   <img src="{%static 'img/home.jpeg'%}" id="static_home_img" alt="">
 
     <div class="welcome">
-        <h1>Welcome to the Blog!</h1>
+        Welcome to the Blog!
     </div>
 
-    <div>
+    <div id="recent_post_heading">
         <h3>Some of our most recent posts:</h3>
     </div>
-          
+          {%for recent_post in recent_posts%}
+                 <div class="recent_post">
+                     <h4>
+                         <a href="{% url 'post' recent_post.id%}" style="color: rgba(43, 39, 39, 0.945);">{{recent_post.title}}</a>:
+                        </h4>
+                    </div>
+                 {%if recent_post.image%}
+                    <a href="{% url 'post' recent_post.id%}"><img src="{{recent_post.image.url}}" alt="" class="img-fluid"  id="recent_img"></a>
+                {%endif%}
+          {%endfor%}
       
 
 {%endblock%}

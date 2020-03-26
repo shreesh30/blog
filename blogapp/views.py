@@ -5,7 +5,7 @@ from django.core.paginator import Paginator,PageNotAnInteger,EmptyPage
 # Create your views here.
 def blog(request):
     posts=Post.objects.all().order_by('-created_on')
-    paginator=Paginator(posts,6)
+    paginator=Paginator(posts,4)
     page=request.GET.get('page')
     paged_posts=paginator.get_page(page)
     context={

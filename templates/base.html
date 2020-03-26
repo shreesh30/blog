@@ -6,61 +6,233 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{%static 'css/all.css'%}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <title>shreesh blog</title>
+    <title>TECHNO</title>
+    <style>
+      body {
+        background-image: url(/static/img/backgroundimg.jpg);
+        background-repeat: no-repeat;
+        background-attachment:fixed; 
+        background-size: 100% 100%;
+      }
+
+      img{
+        border-radius: 100%;
+      }
+      </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="{% url 'index'%}">SHREESH BLOG</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li {% if '/' == request.path %} 
-            class="nav-item active mr-3"
-            {%else%}
-            class="nav-item mr-3"
-            {%endif%}
-            >
-              <a class="nav-link" href="{% url 'index'%}">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li {%if '/list/' == request.path %}
-            class="nav-item active mr-3"
-            {%else%}
-            class="nav-item mr-3"
-            {%endif%}>
-              <a class="nav-link" href="{% url 'post_list'%}">Posts</a>
-            </li>
-            <li {%if '/about' == request.path%} 
-            class="nav-item active mr-3"
-            {%else%}
-            class="nav-item mr-3"
-            {%endif%}>
-              <a class="nav-link" href="{% url 'about'%}">About</a>
-            </li>
-            
-          </ul>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/">
+      <img src="{%static 'img/logo.jpg'%}" width="60" height="60" class="img-circle" alt="Avatar">
+      Techno</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li 
+        {% if '/' == request.path %} 
+          class="nav-item active mr-3"
+        {% else %}
+          class="nav-item mr-3"
+        {%endif%}
+        >
+          <a class="nav-link" href="{%url 'index'%}">Home</a>
+        </li>
+        <li 
+        {% if '/list/' == request.path %} 
+          class="nav-item active mr-3"
+        {% else %}
+          class="nav-item mr-3"
+        {%endif%}
+        >
+          <a class="nav-link" href="/list/">Posts</a>
+        </li>
+        <li 
+        {% if '/about' == request.path %} 
+        class="nav-item active mr-3"
+      {% else %}
+        class="nav-item mr-3"
+      {%endif%}
+        >
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        
+      </ul>
 
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item mr-3">
-              <a class="nav-link" href="{%url 'register'%}">
-                <i class="fas fa-user-plus"></i> Register</a>
+      <ul class="navbar-nav ml-auto">
+        {%if user.is_authenticated%}
+            <li 
+            {% if '/' == request.path %}
+              class="nav-item active mr-3"
+            {%else%}
+              class="nav-item mr-3"
+            {% endif %}
+            >
+              <a class="nav-link" href="{%url 'index'%}">
+                 Welcome,{{user.username}}</a>
             </li>
+
             <li class="nav-item mr-3">
-              <a class="nav-link" href="{%url 'login'%}">
-                <i class="fas fa-sign-in-alt"></i>Login</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
+              <a href="javascript:{document.getElementById('logout').submit()}" class="nav-link">
+                <i class="fas fa-sign-out-alt">Logout</i>
+              </a>
+              <form action="{%url 'logout'%}" method="POST" id="logout">
+                {%csrf_token%}
+                <input type="hidden">
+              </form>
+          </li>
+          {%else%}
+          <li
+          {% if '/accounts/register' == request.path %}
+            class="nav-item active mr-3"
+            {%else%}
+            class="nav-item mr-3"
+            {% endif %}
+            >
+            <a class="nav-link" href="{%url 'register'%}">
+              <i class="fas fa-user-plus"></i> Register</a>
+          </li>
+          <li 
+          {% if '/accounts/login' == request.path %}
+            class="nav-item active mr-3"
+            {%else%}
+            class="nav-item mr-3"
+            {% endif %}
+            >
+            <a class="nav-link" href="{%url 'login'%}">
+              <i class="fas fa-sign-in-alt"></i>Login</a>
+          </li>
+          {%endif%}
+      </ul>
+    </div>
+  </nav>
+
+
+
     {%block content%}
     {%endblock%}
 
-    <footer id="main-footer" class="py-4 bg-primary text-white text-center">
-        Copyright &copy;
-        <span class="year"></span> Shreesh Arya
-      </footer>
-  <!-- Footer -->
+    <!-- Footer -->
+<footer class="page-footer font-small mdb-color lighten-3 pt-4" id="foot">
+
+  <!-- Footer Links -->
+  <div class="container text-center text-md-left">
+
+    <!-- Grid row -->
+    <div class="row">
+
+      <!-- Grid column -->
+      <div class="col-md-4 col-lg-3 mr-auto my-md-4 my-0 mt-4 mb-1">
+
+        <!-- Content -->
+        <h5 class="font-weight-bold text-uppercase mb-4">Techno</h5>
+        <p>Here you can use rows and columns to organize your footer content.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit amet numquam iure provident voluptate
+          esse
+          quasi, veritatis totam voluptas nostrum.</p>
+
+      </div>
+      <!-- Grid column -->
+
+      <hr class="clearfix w-100 d-md-none">
+
+      <!-- Grid column -->
+      <div class="col-md-2 col-lg-2 mx-auto my-md-4 my-0 mt-4 mb-1">
+
+        <!-- Links -->
+        <h5 class="font-weight-bold text-uppercase mb-4">About</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <p>
+              <a href="#!">PROJECTS</a>
+            </p>
+          </li>
+          <li>
+            <p>
+              <a href="/about">ABOUT US</a>
+            </p>
+          </li>
+          <li>
+            <p>
+              <a href="/list/">BLOG</a>
+            </p>
+          </li>
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+      <hr class="clearfix w-100 d-md-none">
+
+      <!-- Grid column -->
+      <div class="col-md-4 col-lg-3 mx-auto my-md-4 my-0 mt-4 mb-1">
+
+        <!-- Contact details -->
+        <h5 class="font-weight-bold text-uppercase mb-4">Address</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <p>
+              <i class="fas fa-home mr-3"></i> MUMBAI,INDIA</p>
+          </li>
+          <li>
+            <p>
+              <i class="fas fa-envelope mr-3"></i> shreesharya20@gmail.com</p>
+          </li>
+          <li>
+            <p>
+              <i class="fas fa-phone mr-3"></i> +91 9987362295</p>
+          </li>
+          
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+      <hr class="clearfix w-100 d-md-none">
+
+      <!-- Grid column -->
+      <div class="col-md-2 col-lg-2 text-center mx-auto my-4">
+
+        <!-- Social buttons -->
+        <h5 class="font-weight-bold text-uppercase mb-4">Follow Us</h5>
+
+        <!-- Facebook -->
+        <a  href="https://www.facebook.com/shreesh.arya.7">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <!-- Twitter -->
+        <a  href="https://twitter.com/Shreesh83941023">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <!-- Google +-->
+        <a href="https://www.linkedin.com/in/shreesh-arya-05493a193/">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <!-- Dribbble -->
+        <a href="https://www.instagram.com/shreesh_arya/">
+          <i class="fab fa-instagram"></i>
+        </a>
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+
+  </div>
+  <!-- Footer Links -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2020 Copyright:
+    <a href="/"> Techno Blog</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
 </body>
 </html>
 

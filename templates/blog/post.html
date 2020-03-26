@@ -3,8 +3,12 @@
 {%block content%}
 
 {%if post_details%}
+    <div class="title">
+        <h3 id="post_title">{{post_details.title}}</h3>
+    </div>
     <p class="post">{{post_details.body}}</p>
         
+    <h6 class="update">Last Updated:{{post_details.last_modified}}</h6>
     
 {%endif%}
 {%endblock%}

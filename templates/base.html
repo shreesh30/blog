@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css?family=Gotu&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>TECHNO</title>
     <style>
 
@@ -20,12 +21,7 @@
         font-family: 'Gotu', sans-serif;
       }
 
-      body {
-        background-image: url(/static/img/background.jpg);
-        background-repeat: no-repeat;
-        background-attachment:fixed; 
-        background-size: 100% 100%;
-      }
+      
 
       center{
         font-family: 'Roboto Mono', monospace;
@@ -98,10 +94,15 @@
 
       #index_logo{
         margin-bottom: 1%;
+        margin-right: 0.5%;
       }
 
       #foot{
         position:relative;
+        border-top: 1px solid #ebebeb;
+        margin-left: 11%;
+        margin-top: 5%;
+        margin-right: 11%;
       }
     
       #navigation_bar{
@@ -123,7 +124,8 @@
       }
 
       #static_home_img{
-        margin-left: 12.5%;
+        margin-left: 14%;
+        margin-right: 14%;
       }
 
       .welcome{
@@ -185,9 +187,9 @@
 </head>
 <body>
   
-  <nav class="navbar navbar-expand-lg navbar-light " id="navigation_bar">
-    <a class="navbar-brand" href="{%url 'index'%}">
-      <img src="{%static 'img/logo.png'%}" width="50" height="50" class="img-circle" alt="Avatar">
+  <nav class="navbar navbar-expand-lg navbar-light " id="navigation_bar" style="border-bottom: 1px solid #ebebeb; margin-left:11%;margin-right:11%;border-top:1px solid #ebebeb;margin-top:3%">
+    <a class="navbar-brand" href="{%url 'index'%}" style="font-size: 130%;margin-top:0.25%">
+      <img src="{%static 'img/logotrial.png'%}" width="50" height="50" class="img-circle" alt="Avatar">
       Techno</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -201,7 +203,7 @@
           class="nav-item mr-3"
         {%endif%}
         >
-          <a class="nav-link" href="{%url 'index'%}">Home</a>
+          <a class="nav-link" href="{%url 'index'%}" style="font-size: 115%;">Home</a>
         </li>
         <li 
         {% if '/list/' == request.path %} 
@@ -210,7 +212,7 @@
           class="nav-item mr-3"
         {%endif%}
         >
-          <a class="nav-link" href="/list/">Posts</a>
+          <a class="nav-link" href="/list/" style="font-size: 115%;">Posts</a>
         </li>
         <li 
         {% if '/about' == request.path %} 
@@ -219,7 +221,7 @@
         class="nav-item mr-3"
       {%endif%}
         >
-          <a class="nav-link" href="/about">About</a>
+          <a class="nav-link" href="/about" style="font-size: 115%;">About</a>
         </li>
         
       </ul>
@@ -233,13 +235,13 @@
               class="nav-item mr-3"
             {% endif %}
             >
-              <a class="nav-link" href="{%url 'index'%}">
+              <a class="nav-link" href="{%url 'index'%}" style="font-size: 115%;">
                  Welcome,{{user.username}}</a>
             </li>
 
             <li class="nav-item mr-3">
               <a href="javascript:{document.getElementById('logout').submit()}" class="nav-link">
-                <i class="fas fa-sign-out-alt">Logout</i>
+                <i class="fas fa-sign-out-alt" style="font-size: 115%;">Logout</i>
               </a>
               <form action="{%url 'logout'%}" method="POST" id="logout">
                 {%csrf_token%}
@@ -254,8 +256,8 @@
             class="nav-item mr-3"
             {% endif %}
             >
-            <a class="nav-link" href="{%url 'register'%}">
-              <i class="fas fa-user-plus"></i> Register</a>
+            <a class="nav-link" href="{%url 'register'%}" style="font-size: 115%;">
+              <i class="fa fa-user-plus"></i> Register</a>
           </li>
           <li 
           {% if '/accounts/login' == request.path %}
@@ -264,8 +266,8 @@
             class="nav-item mr-3"
             {% endif %}
             >
-            <a class="nav-link" href="{%url 'login'%}">
-              <i class="fas fa-sign-in-alt"></i>Login</a>
+            <a class="nav-link" href="{%url 'login'%}" style="font-size: 115%;">
+              <i class="fa fa-sign-in" aria-hidden="true"></i>Login</a>
           </li>
           {%endif%}
       </ul>

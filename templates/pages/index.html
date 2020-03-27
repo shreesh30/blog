@@ -2,7 +2,7 @@
 {%load static%}
 {%block content%}
 <div id="heading">
-    <img src="{%static 'img/logo.png'%}" width="80" height="80" class="img-fluid" id="index_logo" alt="Responsive image" >Techno</div>
+    <img src="{%static 'img/logotrial.png'%}" width="80" height="80" class="img-fluid" id="index_logo" alt="Responsive image" >Techno</div>
     
     <!-- ALERTS -->
   {%include 'partials/_alerts.html' %}
@@ -41,7 +41,7 @@
                   </div> -->
 
                   
-                  <div class="card-group" style="padding-left: 20em; padding-right:20em;width:100%;height:auto">
+                  <div class="card-group" style="padding-left: 20em; padding-right:20em;width:100%;height:auto; margin-bottom:2%">
                     <div class="card" style="background: transparent;width:100%;height:auto">
                         <a href="{% url 'post' recent_post.id%}"><img class="img-fluid" src="{{recent_post.image.url}}" alt="Responsive image" style="width: 70%;height:auto; margin-left:15%;margin-top:5%"></a>
                       <div class="card-body" style="width:100%;height:auto">

@@ -5,6 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{%static 'css/all.css'%}">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width-device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Gotu&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Baloo+Da+2&display=swap" rel="stylesheet">
@@ -12,7 +17,9 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>TECHNO</title>
+    <link rel="shortcut icon" href="{%static 'img/logotrial.png'%}" />
+    <link rel="icon" href="{%static 'img/logotrial.png'%}" type="image/icon type">
+    <title style="font-family:'Gotu', sans-serif;">Techno Buzz {% block title%} {%endblock%}</title>
     <style>
 
       #created_on{
@@ -124,8 +131,8 @@
       }
 
       #static_home_img{
-        margin-left: 14%;
-        margin-right: 14%;
+       padding-left:200px;
+       padding-right:200px;
       }
 
       .welcome{
@@ -134,9 +141,9 @@
         color: rgba(43, 39, 39, 0.945);
         font-family: 'Gotu', sans-serif;
         font-size: 400%;
-        
-        margin-right: 15%;
-        margin-left: 14%;
+        width: 100%;
+       padding-left: 20px;
+       padding-right: 20px;
         margin-bottom: 2.5%;
       }
 
@@ -184,7 +191,7 @@
       }
 
 
-      
+  
       
       
       </style>
@@ -194,11 +201,15 @@
   <nav class="navbar navbar-expand-lg navbar-light " id="navigation_bar" style="border-bottom: 1px solid #ebebeb; margin-left:11%;margin-right:11%;border-top:1px solid #ebebeb;margin-top:3%">
     <a class="navbar-brand" href="{%url 'index'%}" style="font-size: 130%;margin-top:0.25%;font-family: 'Gotu', sans-serif;">
       <img src="{%static 'img/logotrial.png'%}" width="50" height="50" class="img-circle" alt="Avatar">
-      Techno</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      Techno Buzz</a>
+
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myMenu" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
+
+
+    <div class="collapse navbar-collapse" id="myMenu">
       <ul class="navbar-nav">
         <li 
         {% if '/' == request.path %} 
@@ -397,7 +408,7 @@
 
   <!-- Copyright -->
   <div class="footer-copyright text-center py-3" style="font-family: 'Gotu', sans-serif;">© 2020 Copyright:
-    <a href="/"> Techno Blog</a>
+    <a href="/"> Techno Buzz</a>
   </div>
   <!-- Copyright -->
 

@@ -129,11 +129,15 @@
       }
 
       .welcome{
-        margin-top: 1%;
+        margin-top: 2.5%;
         text-align: center;
         color: rgba(43, 39, 39, 0.945);
         font-family: 'Gotu', sans-serif;
         font-size: 400%;
+        
+        margin-right: 15%;
+        margin-left: 14%;
+        margin-bottom: 2.5%;
       }
 
       .recent_post{
@@ -147,7 +151,7 @@
         
         color: rgba(43, 39, 39, 0.945);
         font-family: 'Gotu', sans-serif;
-        
+        margin-bottom: 2%;
         text-align: center;
       }
 
@@ -188,7 +192,7 @@
 <body>
   
   <nav class="navbar navbar-expand-lg navbar-light " id="navigation_bar" style="border-bottom: 1px solid #ebebeb; margin-left:11%;margin-right:11%;border-top:1px solid #ebebeb;margin-top:3%">
-    <a class="navbar-brand" href="{%url 'index'%}" style="font-size: 130%;margin-top:0.25%">
+    <a class="navbar-brand" href="{%url 'index'%}" style="font-size: 130%;margin-top:0.25%;font-family: 'Gotu', sans-serif;">
       <img src="{%static 'img/logotrial.png'%}" width="50" height="50" class="img-circle" alt="Avatar">
       Techno</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -203,7 +207,7 @@
           class="nav-item mr-3"
         {%endif%}
         >
-          <a class="nav-link" href="{%url 'index'%}" style="font-size: 115%;">Home</a>
+          <a class="nav-link" href="{%url 'index'%}" style="font-size: 115%;font-family: 'Gotu', sans-serif;">Home</a>
         </li>
         <li 
         {% if '/list/' == request.path %} 
@@ -212,7 +216,7 @@
           class="nav-item mr-3"
         {%endif%}
         >
-          <a class="nav-link" href="/list/" style="font-size: 115%;">Posts</a>
+          <a class="nav-link" href="/list/" style="font-size: 115%;font-family: 'Gotu', sans-serif;">Posts</a>
         </li>
         <li 
         {% if '/about' == request.path %} 
@@ -221,7 +225,7 @@
         class="nav-item mr-3"
       {%endif%}
         >
-          <a class="nav-link" href="/about" style="font-size: 115%;">About</a>
+          <a class="nav-link" href="/about" style="font-size: 115%;font-family: 'Gotu', sans-serif;">About</a>
         </li>
         
       </ul>
@@ -241,7 +245,7 @@
 
             <li class="nav-item mr-3">
               <a href="javascript:{document.getElementById('logout').submit()}" class="nav-link">
-                <i class="fas fa-sign-out-alt" style="font-size: 115%;">Logout</i>
+                <i class="fas fa-sign-out-alt" style="font-size: 115%;font-family: 'Gotu', sans-serif;">Logout</i>
               </a>
               <form action="{%url 'logout'%}" method="POST" id="logout">
                 {%csrf_token%}
@@ -256,7 +260,7 @@
             class="nav-item mr-3"
             {% endif %}
             >
-            <a class="nav-link" href="{%url 'register'%}" style="font-size: 115%;">
+            <a class="nav-link" href="{%url 'register'%}" style="font-size: 115%;font-family: 'Gotu', sans-serif;">
               <i class="fa fa-user-plus"></i> Register</a>
           </li>
           <li 
@@ -266,7 +270,7 @@
             class="nav-item mr-3"
             {% endif %}
             >
-            <a class="nav-link" href="{%url 'login'%}" style="font-size: 115%;">
+            <a class="nav-link" href="{%url 'login'%}" style="font-size: 115%;font-family: 'Gotu', sans-serif;">
               <i class="fa fa-sign-in" aria-hidden="true"></i>Login</a>
           </li>
           {%endif%}
@@ -292,9 +296,9 @@
       <div class="col-md-4 col-lg-3 mr-auto my-md-4 my-0 mt-4 mb-1">
 
         <!-- Content -->
-        <h5 class="font-weight-bold text-uppercase mb-4">Techno</h5>
-        <p>Here you can use rows and columns to organize your footer content.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit amet numquam iure provident voluptate
+        <h5 class="font-weight-bold text-uppercase mb-4" style="font-family: 'Gotu', sans-serif;font-weight:bolder">Techno</h5>
+        <p style="font-family: 'Gotu', sans-serif;">Here you can use rows and columns to organize your footer content.</p>
+        <p style="font-family: 'Gotu', sans-serif;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit amet numquam iure provident voluptate
           esse
           quasi, veritatis totam voluptas nostrum.</p>
 
@@ -307,22 +311,22 @@
       <div class="col-md-2 col-lg-2 mx-auto my-md-4 my-0 mt-4 mb-1">
 
         <!-- Links -->
-        <h5 class="font-weight-bold text-uppercase mb-4">About</h5>
+        <h5 class="font-weight-bold text-uppercase mb-4" style="font-family: 'Gotu', sans-serif;font-weight:bolder">About</h5>
 
         <ul class="list-unstyled">
           <li>
             <p>
-              <a href="#!">PROJECTS</a>
+              <a href="#!" style="font-family: 'Gotu', sans-serif;">PROJECTS</a>
             </p>
           </li>
           <li>
             <p>
-              <a href="/about">ABOUT US</a>
+              <a href="/about" style="font-family: 'Gotu', sans-serif;">ABOUT US</a>
             </p>
           </li>
           <li>
             <p>
-              <a href="/list/">BLOG</a>
+              <a href="/list/" style="font-family: 'Gotu', sans-serif;">BLOG</a>
             </p>
           </li>
         </ul>
@@ -336,20 +340,20 @@
       <div class="col-md-4 col-lg-3 mx-auto my-md-4 my-0 mt-4 mb-1">
 
         <!-- Contact details -->
-        <h5 class="font-weight-bold text-uppercase mb-4">Address</h5>
+        <h5 class="font-weight-bold text-uppercase mb-4" style="font-family: 'Gotu', sans-serif;font-weight:bolder">Address</h5>
 
         <ul class="list-unstyled">
           <li>
-            <p>
-              <i class="fa fa-home mr-3"></i> MUMBAI,INDIA</p>
+            <p style="font-family: 'Gotu', sans-serif;">
+              <i class="fa fa-home mr-3" ></i> MUMBAI,INDIA</p>
           </li>
           <li>
-            <p>
-              <i class="fa fa-envelope mr-3"></i> shreesharya20@gmail.com</p>
+            <p style="font-family: 'Gotu', sans-serif;">
+              <i class="fa fa-envelope mr-3" ></i> shreesharya20@gmail.com</p>
           </li>
           <li>
-            <p>
-              <i class="fa fa-phone mr-3"></i> +91 9987362295</p>
+            <p style="font-family: 'Gotu', sans-serif;">
+              <i class="fa fa-phone mr-3" ></i> +91 9987362295</p>
           </li>
           
         </ul>
@@ -363,7 +367,7 @@
       <div class="col-md-2 col-lg-2 text-center mx-auto my-4">
 
         <!-- Social buttons -->
-        <h5 class="font-weight-bold text-uppercase mb-4">Follow Us</h5>
+        <h5 class="font-weight-bold text-uppercase mb-4" style="font-family: 'Gotu', sans-serif;font-weight:bolder">Follow Us</h5>
         <div class='social_icons'>
         <!-- Facebook -->
         <a id="facebook" class="fa fa-facebook" href="https://www.facebook.com/shreesh.arya.7">
@@ -392,7 +396,7 @@
   <!-- Footer Links -->
 
   <!-- Copyright -->
-  <div class="footer-copyright text-center py-3">© 2020 Copyright:
+  <div class="footer-copyright text-center py-3" style="font-family: 'Gotu', sans-serif;">© 2020 Copyright:
     <a href="/"> Techno Blog</a>
   </div>
   <!-- Copyright -->

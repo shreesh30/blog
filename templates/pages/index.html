@@ -17,46 +17,32 @@
         <h3>Recent Posts:</h3>
     </div>
           {%for recent_post in recent_posts%}
-                 <!-- <div class="recent_post">
-                     <h4>
-                         <a href="{% url 'post' recent_post.id%}" style="color: rgba(43, 39, 39, 0.945);">{{recent_post.title}}</a>:
-                        </h4>
-                    </div> -->
+                 
 
-                {%if recent_post.image%}
+                
                 
                     
 
-                <!-- <table>
-                    <tr>
-                      <td><a href="{% url 'post' recent_post.id%}"></a><img src="{{recent_post.image.url}}" alt=""   id="recent_img" ></a></td>
-                    </tr>
-                  </table> -->
-
-                  <!-- <div class='image-grid'>
-                    <div class='item' style=''>
-                        <a href="{% url 'post' recent_post.id%}"><img src="{{recent_post.image.url}}" alt=""   id="recent_img" ></a>
-                    </div>
-                    
-                  </div> -->
-
+                
                   
                   <div class="card-group" style="padding-left: 20em; padding-right:20em;width:100%;height:auto; margin-bottom:2%">
                     <div class="card" style="background: transparent;width:100%;height:auto">
+                      {%if recent_post.image%}
                         <a href="{% url 'post' recent_post.id%}"><img class="img-fluid" src="{{recent_post.image.url}}" alt="Responsive image" style="width: 70%;height:auto; margin-left:15%;margin-top:5%"></a>
+                        {%endif%}
                       <div class="card-body" style="width:100%;height:auto">
-                        <h5 class="card-title"><a href="{% url 'post' recent_post.id%}" style="color: rgba(43, 39, 39, 0.945);margin-left:40%; font-size:150%">{{recent_post.title}}</a></h5>
-                        <p class="card-text">{{recent_post.body | slice:":400"}}
+                        <h5 class="card-title"><a href="{% url 'post' recent_post.id%}" style="color: rgba(43, 39, 39, 0.945);margin-left:40%; font-size:150%;font-family: 'Gotu', sans-serif;">{{recent_post.title}}</a></h5>
+                        <p class="card-text" style="font-family: 'Gotu', sans-serif;">{{recent_post.body | slice:":400"}}
                             <br>
-                            <a href="{% url 'post' recent_post.id%}" style="margin-left:35em;;width:100%;height:auto"">continue reading...</a>
+                            <a href="{% url 'post' recent_post.id%}" style="margin-left:75%;;width:100%;height:auto"">continue reading...</a>
                         </p>
-                        <p class="card-text" style="margin-left: 37em;font-size:100%;width:100%;height:auto"><small class="text-muted">{{recent_post.last_modified}}</small></p>
+                        <p class="card-text" style="margin-left: 75%;font-size:100%;margin-right:25;width:100%;height:auto"><small class="text-muted">Modified on:{{recent_post.last_modified}}</small></p>
                       </div>
                     </div>
                     
                   </div>
                 
-                {%endif%}
+                
           {%endfor%}
 
           

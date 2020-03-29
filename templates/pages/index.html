@@ -31,7 +31,7 @@
                         <a href="{% url 'post' recent_post.id%}"><img class="img-fluid" src="{{recent_post.image.url}}" alt="Responsive image" style="width: 100%;height:auto; padding-left:20px;padding-right:20px;padding-top:20px"></a>
                         {%endif%}
                       <div class="card-body" style="width:100%;height:auto">
-                        <h5 class="card-title"><a href="{% url 'post' recent_post.id%}" style="color: rgba(43, 39, 39, 0.945);margin-left:40%; font-size:150%;font-family: 'Gotu', sans-serif;">{{recent_post.title}}</a></h5>
+                        <h5 class="card-title"><a href="{% url 'post' recent_post.id%}" style="color: rgba(43, 39, 39, 0.945);text-align:left; font-size:150%;font-family: 'Gotu', sans-serif;">{{recent_post.title}}</a></h5>
                         <p class="card-text" style="font-family: 'Gotu', sans-serif;">{{recent_post.body | slice:":400"}}
                             <br>
                             <a href="{% url 'post' recent_post.id%}" style="margin-left:75%;;width:100%;height:auto"">continue reading...</a>

@@ -140,7 +140,7 @@ MESSAGE_TAGS={
 }
 
 MEDIA_ROOT=os.path.join(BASE_DIR,'media')
-MEDIA_URL='/media/'
+MEDIA_URL='https://django-technobuzz-files.s3.ap-south-1.amazonaws.com/photos/'
 
 django_heroku.settings(locals())
 

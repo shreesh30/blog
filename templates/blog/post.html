@@ -8,7 +8,7 @@
 
 {%if post_details%}
 <div class="card mb-3" style="background-color: transparent;margin-left:10%;margin-right:10%;margin-top:2%">
-    <h5 class="card-title" style="margin-left: 40%;font-size:250%;font-family: 'Gotu', sans-serif; color: rgba(43, 39, 39, 0.945);margin-top:2%">{{post_details.title}}</h5>
+    <h5 class="card-title" style="font-size:250%;font-family: 'Gotu', sans-serif; color: rgba(43, 39, 39, 0.945);margin-top:2%">{{post_details.title}}</h5>
     {%if post_details.image%}
     <img src="{{post_details.image.url}}" class="img-fluid" alt="Responsive image" style="position:responsive;padding-left:2%;padding-right:2%;margin-left: 5%;margin-right:5%;margin-top:2%;margin-bottom:2%">
     {%endif%}

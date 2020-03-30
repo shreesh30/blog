@@ -23,7 +23,7 @@
 
             <div class="col-lg-3">
               <div class="card-group" >
-                <div class="card" style="background: transparent;width:100%;height:auto">
+                <!-- <div class="card" style="background: transparent;width:100%;height:auto"> -->
                   {%if recent_post.image%}
                     <a href="{% url 'post' recent_post.id%}"><img class="img-fluid"  src="{{recent_post.image.url}}" alt="Responsive image" ></a>
                     {%endif%}
@@ -35,7 +35,7 @@
                     </p>
                     <p class="card-text" ><small class="text-muted">Modified on:{{recent_post.last_modified}}</small></p>
                   </div>
-                </div>
+                <!-- </div> -->
                 
               </div>
 

@@ -1,6 +1,7 @@
 {%extends 'base.html'%}
 {%load static%}
 {%block content%}
+<div class="container">
 <div id="heading" style="width: 100%;">
     <img src="{%static 'img/logotrial.png'%}" width="80" height="80" class="img-fluid" id="index_logo" alt="Responsive image"  >Techno Buzz</div>
     
@@ -18,35 +19,40 @@
     </div>
           {%for recent_post in recent_posts%}
                  
+          <div class="row">
 
-                
-                
-                    
-
-                
-                  
-                  <div class="card-group" style="padding-left: 20em; padding-right:20em;width:100%;height:auto; margin-bottom:2%">
-                    <div class="card" style="background: transparent;width:100%;height:auto">
-                      {%if recent_post.image%}
-                        <a href="{% url 'post' recent_post.id%}"><img class="img-fluid"  src="{{recent_post.image.url}}" alt="Responsive image" style="width: 100%;height:auto; padding-left:20px;padding-right:20px;padding-top:20px"></a>
-                        {%endif%}
-                      <div class="card-body" style="width:100%;height:auto">
-                        <h5 class="card-title"><a href="{% url 'post' recent_post.id%}" style="color: rgba(43, 39, 39, 0.945);text-align:left; font-size:150%;font-family: 'Gotu', sans-serif;">{{recent_post.title}}</a></h5>
-                        <p class="card-text" style="font-family: 'Gotu', sans-serif;">{{recent_post.body | slice:":400"}}
-                            <br>
-                            <a href="{% url 'post' recent_post.id%}" style="margin-left:75%;;width:100%;height:auto"">continue reading...</a>
-                        </p>
-                        <p class="card-text" style="padding-left:540px;padding-right:20px;font-size:100%;width:100%;height:auto"><small class="text-muted">Modified on:{{recent_post.last_modified}}</small></p>
-                      </div>
-                    </div>
-                    
+            <div class="col-lg-3">
+              <div class="card-group" style="padding-left: 20em; padding-right:20em;width:100%;height:auto; margin-bottom:2%">
+                <div class="card" style="background: transparent;width:100%;height:auto">
+                  {%if recent_post.image%}
+                    <a href="{% url 'post' recent_post.id%}"><img class="img-fluid"  src="{{recent_post.image.url}}" alt="Responsive image" style="width: 100%;height:auto; padding-left:20px;padding-right:20px;padding-top:20px"></a>
+                    {%endif%}
+                  <div class="card-body" style="width:100%;height:auto">
+                    <h5 class="card-title"><a href="{% url 'post' recent_post.id%}" style="color: rgba(43, 39, 39, 0.945);text-align:left; font-size:150%;font-family: 'Gotu', sans-serif;">{{recent_post.title}}</a></h5>
+                    <p class="card-text" style="font-family: 'Gotu', sans-serif;">{{recent_post.body | slice:":400"}}
+                        <br>
+                        <a href="{% url 'post' recent_post.id%}" style="margin-left:75%;;width:100%;height:auto"">continue reading...</a>
+                    </p>
+                    <p class="card-text" style="padding-left:540px;padding-right:20px;font-size:100%;width:100%;height:auto"><small class="text-muted">Modified on:{{recent_post.last_modified}}</small></p>
                   </div>
+                </div>
+                
+              </div>
+
+            </div>
+          </div>
+                
+                
+                    
+
+                
+                
                 
                 
           {%endfor%}
 
           
-      
+</div>     
 
 {%endblock%}
 

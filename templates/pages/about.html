@@ -4,66 +4,69 @@
     | About
 {%endblock%}
 {%block content%}
-<h1 style="font-family: 'Gotu', sans-serif;text-align:center;margin-top:1.5%">About</h1>
 
-<div class="card" style="margin-left: 21.5%;margin-right:21.5%">
-    <h5 class="card-header" style="font-family: 'Gotu', sans-serif;">About Me</h5>
-    <div class="card-body">
-      
-      <p class="card-text" style="font-family: 'Gotu', sans-serif;">My name is Shreesh Arya and i am a Web Developer who likes to create dynamic and beautiful web pages. <br>
-        I enjoy creating beautiful websites that are responsive and have good user interface.
-      </p>
+<div class="container">
+  <h1 style="font-family: 'Gotu', sans-serif;text-align:center;margin-top:1.5%">About</h1>
 
+  <div class="card" >
+      <h5 class="card-header" style="font-family: 'Gotu', sans-serif;">About Me</h5>
+      <div class="card-body">
+        
+        <p class="card-text" style="font-family: 'Gotu', sans-serif;">My name is Shreesh Arya and i am a Web Developer who likes to create dynamic and beautiful web pages. <br>
+          I enjoy creating beautiful websites that are responsive and have good user interface.
+        </p>
+
+      </div>
     </div>
-  </div>
-<div class="card-columns" style="padding-left: 200px; margin-top:1%">
-    <div class="card" style="margin-left: 27%;margin-right:50%">
-        <h5 class="card-header" style="font-family: 'Gotu', sans-serif;">Skills</h5>
-        <div class="card-body">
-          
-          <p class="card-text" style="font-family: 'Gotu', sans-serif;">
+  <div class="card-columns" style="padding-left: 200px; margin-top:1%">
+      <div class="card" style="margin-left: 27%;margin-right:50%">
+          <h5 class="card-header" style="font-family: 'Gotu', sans-serif;">Skills</h5>
+          <div class="card-body">
+            
+            <p class="card-text" style="font-family: 'Gotu', sans-serif;">
+                <ul style="font-family: 'Gotu', sans-serif;">
+                    <li>C/C++</li>
+                    <li>MySQL</li>
+                    <li>PostgreSQL</li>
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                    <li>Python</li>
+                    <li>Django</li>
+                    <li>Java(Basics)</li>
+                      <li>English Language Proficiency</li>
+                      <li>Spoken English</li>
+                </ul>
+            </p>
+      
+          </div>
+        </div>
+
+        <div class="card" style="margin-left: 27%;margin-right:50%">
+          <h5 class="card-header" style="font-family: 'Gotu', sans-serif;">Experience</h5>
+          <div class="card-body">
+            
+            <p class="card-text" style="font-family: 'Gotu', sans-serif;">
               <ul style="font-family: 'Gotu', sans-serif;">
-                  <li>C/C++</li>
-                  <li>MySQL</li>
-                  <li>PostgreSQL</li>
-                  <li>HTML5</li>
-                  <li>CSS3</li>
-                  <li>Python</li>
-                  <li>Django</li>
-                  <li>Java(Basics)</li>
-                    <li>English Language Proficiency</li>
-                    <li>Spoken English</li>
+                  <li>Intern at ONGC</li>
               </ul>
           </p>
-    
+      
+          </div>
         </div>
-      </div>
-
-      <div class="card" style="margin-left: 27%;margin-right:50%">
-        <h5 class="card-header" style="font-family: 'Gotu', sans-serif;">Experience</h5>
-        <div class="card-body">
-          
-          <p class="card-text" style="font-family: 'Gotu', sans-serif;">
-            <ul style="font-family: 'Gotu', sans-serif;">
-                <li>Intern at ONGC</li>
-            </ul>
-        </p>
-    
+        <div class="card" style="margin-left: 27%;margin-right:50%">
+          <h5 class="card-header" style="font-family: 'Gotu', sans-serif;">Projects</h5>
+          <div class="card-body">
+            
+            <p class="card-text" style="font-family: 'Gotu', sans-serif;">
+              <ul style="font-family: 'Gotu', sans-serif;">
+                <li><a href="{%url 'index'%}">Blog page</a></li>
+                <li><a href="http://165.22.212.136">Real Estate Site(Course Follow Along)</a></li>
+              </ul>
+            </p>
+      
+          </div>
         </div>
-      </div>
-      <div class="card" style="margin-left: 27%;margin-right:50%">
-        <h5 class="card-header" style="font-family: 'Gotu', sans-serif;">Projects</h5>
-        <div class="card-body">
-          
-          <p class="card-text" style="font-family: 'Gotu', sans-serif;">
-            <ul style="font-family: 'Gotu', sans-serif;">
-              <li><a href="{%url 'index'%}">Blog page</a></li>
-              <li><a href="http://165.22.212.136">Real Estate Site(Course Follow Along)</a></li>
-            </ul>
-          </p>
-    
-        </div>
-      </div>
+  </div>
 </div>
   
 

@@ -32,7 +32,7 @@
                         <img class="img-fluid" id="recent_posts_img" src="{{recent_post.image.url}}" alt="Responsive image" >
                         {%endif%}
                       <div class="card-body" style="width:100%;height:auto">
-                        <h5 class="card-title" ><a id="recent_posts_title" href="{% url 'post' recent_post.id%}" >{{recent_post.title}}</a></h5>
+                        <h5 class="card-title" id="recent_posts_title_h5"><a id="recent_posts_title" href="{% url 'post' recent_post.id%}" >{{recent_post.title}}</a></h5>
                         <p class="card-text" style="font-family: 'Gotu', sans-serif;">{{recent_post.body | slice:":400"}}
                             <br>
                             <a href="{% url 'post' recent_post.id%}" >continue reading...</a>

@@ -29,7 +29,7 @@
                   <div class="card-group" >
                     <div class="card" style="background: transparent;width:100%;height:auto;margin-top:1%;margin-bottom:1%">
                       {%if recent_post.image%}
-                        <img class="img-fluid" id="recent_img" src="{{recent_post.image.url}}" alt="Responsive image" >
+                        <img class="img-fluid" id="recent_posts_img" src="{{recent_post.image.url}}" alt="Responsive image" >
                         {%endif%}
                       <div class="card-body" style="width:100%;height:auto">
                         <h5 class="card-title"><a href="{% url 'post' recent_post.id%}" >{{recent_post.title}}</a></h5>

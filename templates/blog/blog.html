@@ -15,17 +15,18 @@
 
 
 <!-- </div> -->
-
+<div class="container">
 {%for post in posts%}
-<div class="card w-75" style="width: 18rem;background:transparent; margin-left:13%;margin-right:13%; margin-bottom:2%;margin-top:2%;padding-left:1.5%;padding-right:2%"  >
-    <div class="card-body" style="padding-left: 2em;">
-      <h5 class="card-title"><a href="{% url 'post' post.id%}" style="color: rgba(43, 39, 39, 0.945);font-family: 'Gotu', sans-serif;">{{post.title}}</a></h5>
-      <p class="card-text" style="font-family: 'Gotu', sans-serif;">{{post.body | slice:":300"}}....</p>
-      <p class="card-text" style="font-size:1vw;width:100%;height:auto;font-family: 'Gotu', sans-serif;"><small class="text-muted">Created on:{{post.created_on}}</small></p>
-      <a href="{% url 'post' post.id%}" style="color: beige; background-color:rgba(43, 39, 39, 0.945)" class="btn btn-primary">Read</a>
-      
+  <div class="card w-75" style="width: 18rem;background:transparent; margin-left:13%;margin-right:13%; margin-bottom:2%;margin-top:2%;padding-left:1.5%;padding-right:2%"  >
+      <div class="card-body" style="padding-left: 2em;">
+        <h5 class="card-title"><a href="{% url 'post' post.id%}" style="color: rgba(43, 39, 39, 0.945);font-family: 'Gotu', sans-serif;">{{post.title}}</a></h5>
+        <p class="card-text" style="font-family: 'Gotu', sans-serif;">{{post.body | slice:":300"}}....</p>
+        <p class="card-text" style="font-size:1vw;width:100%;height:auto;font-family: 'Gotu', sans-serif;"><small class="text-muted">Created on:{{post.created_on}}</small></p>
+        <a href="{% url 'post' post.id%}" style="color: beige; background-color:rgba(43, 39, 39, 0.945)" class="btn btn-primary">Read</a>
+        
+      </div>
     </div>
-  </div>
+</div>
 
 {%endfor%}
 

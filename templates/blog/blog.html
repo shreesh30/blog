@@ -17,7 +17,7 @@
 <!-- </div> -->
 <div class="container">
 {%for post in posts%}
-  <div class="card w-75" style="width: 18rem;background:transparent; margin-bottom:2%;margin-top:2%;"  >
+  <div class="card w-75" id="blog_list" style="width: 18rem;background:transparent; margin-bottom:2%;margin-top:2%;"  >
       <div class="card-body" style="padding-left: 2em;">
         <h5 class="card-title"><a href="{% url 'post' post.id%}" style="color: rgba(43, 39, 39, 0.945);font-family: 'Gotu', sans-serif;">{{post.title}}</a></h5>
         <p class="card-text" style="font-family: 'Gotu', sans-serif;">{{post.body | slice:":300"}}....</p>

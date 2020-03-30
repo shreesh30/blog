@@ -22,18 +22,18 @@
           <div class="row">
 
             <div class="col-lg-3">
-              <div class="card-group" style="padding-left: 20em; padding-right:20em;width:100%;height:auto; margin-bottom:2%">
+              <div class="card-group" >
                 <div class="card" style="background: transparent;width:100%;height:auto">
                   {%if recent_post.image%}
-                    <a href="{% url 'post' recent_post.id%}"><img class="img-fluid"  src="{{recent_post.image.url}}" alt="Responsive image" style="width: 100%;height:auto; padding-left:20px;padding-right:20px;padding-top:20px"></a>
+                    <a href="{% url 'post' recent_post.id%}"><img class="img-fluid"  src="{{recent_post.image.url}}" alt="Responsive image" ></a>
                     {%endif%}
                   <div class="card-body" style="width:100%;height:auto">
-                    <h5 class="card-title"><a href="{% url 'post' recent_post.id%}" style="color: rgba(43, 39, 39, 0.945);text-align:left; font-size:150%;font-family: 'Gotu', sans-serif;">{{recent_post.title}}</a></h5>
-                    <p class="card-text" style="font-family: 'Gotu', sans-serif;">{{recent_post.body | slice:":400"}}
+                    <h5 class="card-title"><a href="{% url 'post' recent_post.id%}" >{{recent_post.title}}</a></h5>
+                    <p class="card-text" >{{recent_post.body | slice:":400"}}
                         <br>
-                        <a href="{% url 'post' recent_post.id%}" style="margin-left:75%;;width:100%;height:auto"">continue reading...</a>
+                        <a href="{% url 'post' recent_post.id%}" >continue reading...</a>
                     </p>
-                    <p class="card-text" style="padding-left:540px;padding-right:20px;font-size:100%;width:100%;height:auto"><small class="text-muted">Modified on:{{recent_post.last_modified}}</small></p>
+                    <p class="card-text" ><small class="text-muted">Modified on:{{recent_post.last_modified}}</small></p>
                   </div>
                 </div>
                 
